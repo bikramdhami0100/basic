@@ -1,5 +1,6 @@
 import { Component, computed, effect, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { single } from 'rxjs';
 
 
 @Component({
@@ -10,19 +11,37 @@ import { RouterOutlet } from '@angular/router';
 })
 export class App {
   // protected readonly title = signal('Basic to advanced Angular');
-  height=signal(100);
-  width=signal(10);
-  area=computed(()=>this.height()*this.width())
-  constructor() {
-    effect(() => {
-       console.log(this.height());
-       if(this.height()>150){
-          this.height.set(100);
+ count=signal(10);
+ color="red";
+ fruits=signal("apple");
+   constructor(){
+     effect(()=>{
+      // console.log('color ',this.color);
+      console.log("count: ",this.count());
+       if(this.count()>50 && this.count()<100){
+         this.color="green"
+       }else if (this.count()>100&& this.count()<150){
+         this.color="blue"
+       }else if(this.count()>150){ 
+         this.color="black"
        }
-    })
+     })
+
+     effect(()=>{
+        console.log("color : ",this.fruits());
+     });
+    
+     
+   }
+  updateCount(){
+    // this.count="blue";
+    this.count.set(this.count()+10);
   }
-  updateHeight(){
-      this.height.set(this.height()+10);
-    //  this.area=this.height*this.width;
-  }
+   updateChangeColor(){
+        this.color="gray";
+     }
+     changeFruit(){
+        this.fruits.set("banana");
+     }
+ 
 }
