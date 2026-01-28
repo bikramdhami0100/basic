@@ -1,10 +1,7 @@
-<!-- <button  (click)="clickMe()" type="button">Click me</button> -->
- <button (mouseleave)="handlerEvent($event.type)" type="button">Event</button>
- <input (blur)="handlerEvent($event.type)" type="text" placeholder="enter" />
-
- <div (mouseenter)="handlerEvent($event.type)" class="div1">
-     <p>Count : {{count}}</p>
- </div>
- <div (mouseleave)="handlerEvent($event.type)" class="div2">
-     <p>Count : {{count}}</p>
- </div>
+<h1></h1>
+<div > 
+    <h1 class="heading">{{data()}}</h1>
+     <button (click)="handleSetData()">set</button>
+     <br>
+     <button (click)="handleUpdateArr()">update array</button>
+</div>

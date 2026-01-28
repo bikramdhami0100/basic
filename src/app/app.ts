@@ -1,11 +1,11 @@
 import { Component, computed, effect, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { single } from 'rxjs';
+import { Login } from './login/login';
 
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [RouterOutlet,Login],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

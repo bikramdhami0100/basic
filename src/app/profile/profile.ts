@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, effect, signal, WritableSignal } from '@angular/core';
 
 @Component({
   selector: 'app-profile',
@@ -7,17 +7,19 @@ import { Component } from '@angular/core';
   styleUrl: './profile.css',
 })
 export class Profile {
-    count = 0;
-   handlerEvent(event: any) {
-      //  if(event=='plus'){
-      //   this.count++;
-      //  }else{
-      //   this.count--;
-      //  }
-      console.log(event)
-      
-   }
-  //  clickMe() {
-  //   alert("hello");
-  // }
+     data:WritableSignal<string>=signal("hello");
+     users:WritableSignal<string[]>=signal(['bikram','sarita','dhami']);
+     handleSetData(){
+       this.data.set("world");
+     }
+     constructor(){
+      effect(()=>{
+        console.log(this.users());
+      })
+     }
+     handleUpdateArr(){
+        this.users.update((item)=>[...item,"bohara"])
+        // console.log(this.users);
+     }
+   
 }

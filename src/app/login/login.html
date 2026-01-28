@@ -1,0 +1,12 @@
+<p>login works!</p>
+
+<div>
+   @if(isLogin()) {
+     <span>Your are login  now </span>
+     <button (click)="handleLogin(false)">logout</button>
+   }@else{
+     <span>please login </span>
+     <button (click)="handleLogin(true)">login</button>
+   }
+
+</div>
