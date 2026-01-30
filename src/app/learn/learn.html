@@ -1,0 +1,39 @@
+<h1>learn works!</h1>
+
+<select (change)="handleChange($event)">
+    <option value="start">start</option>
+    <option value="loading"> In loading</option>
+    <option value="end">end</option>
+    <option value="error">Error</option>
+</select>
+<br>
+<br>
+@switch(state()){
+    @case('start'){
+        <span>start</span>
+    }
+    @case('loading'){
+        <span>loading</span>
+    }
+    @case('end'){
+        <span>end</span>
+    }
+    @default{
+        <span>Error</span>
+    }
+}
+<hr>
+
+ <h1>Two way binding</h1>
+ <h3>{{name()}}</h3>
+ <input type="text" [value]="name()" (input)="name.set($event.target.value)"/>
+  <br>
+  <br>
+  <hr>
+   <h1>Two way binding with object</h1> 
+   <h3>{{userDetails().name}}</h3>
+   <input type="text" [value]="userDetails().name" (input)="handleObject('name',$event)"/>
+   <br>
+   <br>
+      <h3>{{userDetails().age}}</h3>
+   <input type="text" [value]="userDetails().age" (input)="handleObject('age',$event)"/>

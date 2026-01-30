@@ -1,11 +1,12 @@
 import { Component, computed, effect, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Login } from './login/login';
+import { Learn } from './learn/learn';
 
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet,Login],
+  imports: [RouterOutlet,Learn],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

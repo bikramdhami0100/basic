@@ -1,12 +1,56 @@
 <p>login works!</p>
 
 <div>
-   @if(isLogin()) {
+   <!-- @if(isLogin()) {
      <span>Your are login  now </span>
      <button (click)="handleLogin(false)">logout</button>
    }@else{
      <span>please login </span>
      <button (click)="handleLogin(true)">login</button>
    }
+
+   <hr>
+   <h1>Toggle</h1>
+   @if(isShow()){
+    <button (click)="isShow.set(false)">hide</button>
+   }@else{
+    <button (click)="isShow.set(true)">show</button>
+   }
+   <br> -->
+   <!-- <hr> -->
+    <!-- <select (change)="handleChange($event)">
+      <option value="start">start</option>
+      <option value="loading"> In loading</option>
+      <option value="end">end</option>
+    </select> -->
+    <!-- <br>
+    <br> -->
+      <!-- <div> -->
+     <!-- @if(selectedValue()=='start'){
+      <span>start</span>
+    }@else if(selectedValue()=='loading'){
+       <span>loading</span>
+    }@else if(selectedValue()=='end'){
+       <span>end</span>
+    } -->
+      <!-- </div> -->
+
+      <hr>
+      <h1>for loop in angular</h1>
+       <ul >
+          @for(user of users(); track user ; let i=$index){
+             <li>{{i+1}} {{user}}</li>
+          }
+       </ul>
+
+       <hr>
+       <ul>
+
+         @for(user of usersDetails(); track user.id){
+            <li> {{$index+1}} {{user.name}}  @if($first) { <span>Admin</span> } @if($last) { <span>Guest</span> } <hr>  </li>
+             <span>@if($count) { <span>count:{{$count}} </span>}</span>
+             
+         }
+       </ul>
 
 </div>
