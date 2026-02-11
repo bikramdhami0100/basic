@@ -9,7 +9,11 @@
 
    <h1 class="heading">Hello, basic</h1>
 
-   <!-- <app-login></app-login> -->
-    <app-learn> </app-learn>
+    <!-- <app-todo></app-todo> -->
+     <!-- <app-footer></app-footer> -->
+     <app-child [userName]="'Bikram Dhami ji'"></app-child>
+     @for(user of users(); track user){
+       <app-child [userName]="user"></app-child>
+     }
 </body>
 </html>
