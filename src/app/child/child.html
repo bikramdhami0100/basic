@@ -1,2 +1,28 @@
+<!-- <span>from child</span> -->
+<style>
+    .heading{
+        background-color: aqua;
+        color: rgb(0, 0, 0);
+    }
+    ul{
+        list-style: none;
+        /* padding: 2px;
+        margin: 2px; */
+    }
+    li{
+        padding: 2px;
+        margin: 2px;
+    }
+</style>
 
-<h1>{{userName}}</h1>
+<!-- <button (click)="handlerUser()" type="button" >click</button> -->
+
+<ul>
+    @for(user of userlists; track user){
+        <li>{{user}} 
+            <button (click)="handleSelectUser(user)">select</button>
+            <button (click)="handleDelete(user)" >delete</button>
+        </li>
+    }
+
+</ul>

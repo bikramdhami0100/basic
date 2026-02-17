@@ -3,17 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Basic Learning</title>
+  <title>Document</title>
 </head>
 <body>
-
-   <h1 class="heading">Hello, basic</h1>
-
-    <!-- <app-todo></app-todo> -->
-     <!-- <app-footer></app-footer> -->
-     <app-child [userName]="'Bikram Dhami ji'"></app-child>
-     @for(user of users(); track user){
-       <app-child [userName]="user"></app-child>
-     }
+   <h1>Hello, basic</h1>
+   <h1>Selected User: {{selectedUser()}}</h1>
+   <app-child [userlists]="users()" (selectedUser)="selectedUser.set($event)" (userDelete)="handleDelete($event)"  ></app-child>
 </body>
 </html>
