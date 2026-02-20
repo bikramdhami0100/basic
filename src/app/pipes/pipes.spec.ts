@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ButtonBox } from './button-box';
+import { Pipes } from './pipes';
 
-describe('ButtonBox', () => {
-  let component: ButtonBox;
-  let fixture: ComponentFixture<ButtonBox>;
+describe('Pipes', () => {
+  let component: Pipes;
+  let fixture: ComponentFixture<Pipes>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ButtonBox]
+      imports: [Pipes]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(ButtonBox);
+    fixture = TestBed.createComponent(Pipes);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });

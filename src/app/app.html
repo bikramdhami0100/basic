@@ -7,7 +7,11 @@
 </head>
 <body>
    <h1>Hello, basic</h1>
-   <h1>Selected User: {{selectedUser()}}</h1>
-   <app-child [userlists]="users()" (selectedUser)="selectedUser.set($event)" (userDelete)="handleDelete($event)"  ></app-child>
+   <!-- <h1>Selected User: {{selectedUser()}}</h1>
+   <app-child [userlists]="users()" (selectedUser)="selectedUser.set($event)" (userDelete)="handleDelete($event)"  ></app-child> -->
+   <h2>{{name() | uppercase}}</h2>
+   <h3>{{salary() | currency}}</h3>
+   <h3>{{time() | date:'mm/dd/yyyy'}}</h3>
+    
 </body>
 </html>

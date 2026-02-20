@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TextBox } from './text-box';
+import { DisplayCount } from './display-count';
 
-describe('TextBox', () => {
-  let component: TextBox;
-  let fixture: ComponentFixture<TextBox>;
+describe('DisplayCount', () => {
+  let component: DisplayCount;
+  let fixture: ComponentFixture<DisplayCount>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [TextBox]
+      imports: [DisplayCount]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(TextBox);
+    fixture = TestBed.createComponent(DisplayCount);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });
