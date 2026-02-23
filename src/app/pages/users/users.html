@@ -1,0 +1,11 @@
+<h1>Users Lists</h1>
+
+<div>
+     @for(user of usersData(); track user.id){
+         
+        <a [routerLink]="['/users-details', user.id]">
+        {{ user.name }}
+        <br/>
+      </a>
+     }
+</div>
