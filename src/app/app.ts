@@ -1,4 +1,4 @@
-import { Component, computed, effect, signal } from '@angular/core';
+import { Component, computed, effect, signal, ViewChild, ViewContainerRef } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
 import { Child } from './child/child';
 import { ControlCount } from './control-count/control-count';
@@ -29,5 +29,12 @@ export class App {
 // //  }
 //    text=signal("This is bikram dhami");
 //    salary=signal(10000);
+   @ViewChild('container',{read:ViewContainerRef})
+   container:ViewContainerRef|undefined;
+   async dynamicComponent(){
+    this.container?.clear();
+    const {DynamicComponent}= await import("../app/dynamic-component/dynamic-component");
+    this.container?.createComponent(DynamicComponent);
 
+   }
 }
