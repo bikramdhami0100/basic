@@ -1,17 +1,32 @@
 <form [formGroup]="loginForm" (ngSubmit)="handleForm()" action="post">
     <label for="name">Name</label>
     <input type="text" placeholder="Enter name" formControlName="name"/>
+    @if(name?.hasError('required') && name?.touched){
+         <span class="error">name is required</span>
+    }
     <br>
 
     <label for="email">Email</label>
     <input type="email" formControlName="email" placeholder="Enter email" />
+     @if(email?.hasError('required') && email?.touched){
+         <span class="error">email is required</span>
+     }
+     @if(email?.errors?.['email']&& email?.touched){
+         <span class="error">email is not valid</span>
+     }
     <br>
 
     <label for="password">Password</label>
     <input type="password" formControlName="password"  placeholder="Enter password"/>
+     @if(password?.hasError('required') && password?.touched){
+         <span class="error">password is required</span>
+     }
+     @if(password?.hasError('minlength') && password?.touched){
+         <span class="error">password must be at least 5 characters</span>
+     }
     <br>
 
-    <button type="submit">Submit</button>
+    <button [disabled]="!loginForm.valid" [attr.disabled] type="submit">Submit</button>
     <button type="text" (click)="resetData()">Reset</button>
 </form>
 <h1>
