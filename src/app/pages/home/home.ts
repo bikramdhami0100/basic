@@ -8,8 +8,8 @@ import { Router, RouterLink } from '@angular/router';
   styleUrl: './home.css',
 })
 export class Home {
-  constructor(private route:Router) {}
-  gotoAbout(){
-    this.route.navigate(['about'],{queryParams:{name:'sunita',age:25}});
-  }
+  // constructor(private route:Router) {}
+  // gotoAbout(){
+  //   this.route.navigate(['about'],{queryParams:{name:'sunita',age:25}});
+  // }
 }

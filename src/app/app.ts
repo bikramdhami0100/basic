@@ -7,11 +7,14 @@ import { Pipes } from './pipes/pipes';
 import { CommonModule } from '@angular/common';
 import { TrimTextPipe } from './custom-pipe/trim-text-pipe';
 import { Header } from './components/header/header';
+import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { Form } from './form/form';
 
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, RouterOutlet,Header],
+  imports: [RouterOutlet,Form
+  ],
   // templateUrl: './app.html',
   templateUrl: './app.html',
   styleUrl: './app.css'
@@ -29,12 +32,22 @@ export class App {
 // //  }
 //    text=signal("This is bikram dhami");
 //    salary=signal(10000);
-   @ViewChild('container',{read:ViewContainerRef})
-   container:ViewContainerRef|undefined;
-   async dynamicComponent(){
-    this.container?.clear();
-    const {DynamicComponent}= await import("../app/dynamic-component/dynamic-component");
-    this.container?.createComponent(DynamicComponent);
+  //  @ViewChild('container',{read:ViewContainerRef})
+  //  container:ViewContainerRef|undefined;
+  //  async dynamicComponent(){
+  //   this.container?.clear();
+  //   const {DynamicComponent}= await import("../app/dynamic-component/dynamic-component");
+  //   this.container?.createComponent(DynamicComponent);
 
-   }
+  //  }
+  // email=new FormControl('bikram');
+  // password=new FormControl('123');
+  // handleForm(){
+  //    console.log("hello world");
+  //    console.log(this.email.value,this.password.value)
+  // }
+  // reset(){
+  //   this.email.reset();
+  //   this.password.reset();
+  // }
 }
