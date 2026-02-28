@@ -1,0 +1,25 @@
+<h1>Signal Form</h1>
+
+<form #userForm="ngForm" (ngSubmit)="handleSubmit(userForm.value)">
+
+  <input
+    type="text"
+    name="email"
+    ngModel
+    placeholder="Enter email"
+ />
+
+  <br><br>
+
+  <input
+  ngModel
+    type="password"
+    name="password"
+    placeholder="Enter password"
+    />
+
+  <br><br>
+
+  <button type="submit">Submit</button>
+
+</form>

@@ -9,17 +9,26 @@ import { TrimTextPipe } from './custom-pipe/trim-text-pipe';
 import { Header } from './components/header/header';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { Form } from './form/form';
+import { SignalForm } from './signal-form/signal-form';
+import { Product } from './services/product';
 
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet,Form
+  imports: [RouterOutlet,SignalForm
   ],
   // templateUrl: './app.html',
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 export class App {
+  // constructor(private product:Product){
+      
+  // }
+  // handleProduct(){
+  //   console.log(this.product.productList());
+  // }
+
 //   name=signal("Bikram Dhami");
 //   salary=signal(10000);
 //   time=signal(new Date());
