@@ -11,6 +11,7 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { Form } from './form/form';
 import { SignalForm } from './signal-form/signal-form';
 import { Product } from './services/product';
+import { ProductData } from './services/productDataType';
 
 
 @Component({
@@ -22,9 +23,17 @@ import { Product } from './services/product';
   styleUrl: './app.css'
 })
 export class App {
-  // constructor(private product:Product){
+  constructor(private product:Product){
       
-  // }
+  }
+  products=signal<ProductData[]>([]);
+  ngOnInit(){
+     
+    this.product.productList().subscribe((item)=>{
+      console.log(item);
+      this.products.set(item.products);
+    })
+  }
   // handleProduct(){
   //   console.log(this.product.productList());
   // }

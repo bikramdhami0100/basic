@@ -41,5 +41,44 @@
        <!-- <h1>Product List</h1>
        <button (click)="handleProduct()" type="submit">ProductList</button> -->
       <app-signal-form></app-signal-form>
+
+<div class="container">
+
+  @for (product of products(); track product.id) {
+
+    <div class="card">
+      
+      <div class="image-section">
+        <img [src]="product.thumbnail" alt="{{product.title}}" />
+        <span class="discount">-{{product.discountPercentage}}%</span>
+      </div>
+
+      <div class="card-body">
+        <h2>{{ product.title }}</h2>
+        <h4>{{ product.brand }}</h4>
+        <p>{{ product.description }}</p>
+
+        <div class="rating">
+          ⭐ {{ product.rating }}
+        </div>
+
+        <div class="price-section">
+          <span class="price">
+            ${{ product.price }}
+          </span>
+        </div>
+
+        <div class="stock"
+             [class.low-stock]="product.stock < 10">
+          {{ product.stock > 0 ? 'In Stock' : 'Out of Stock' }}
+        </div>
+
+      </div>
+
+    </div>
+
+  }
+
+</div>
 </body>
 </html>
